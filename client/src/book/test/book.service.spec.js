@@ -1,6 +1,6 @@
-const bookService = require('../src/book.service');
-const booksProvider = require('../src/books-provider');
-const emailService = require('../src/email.service');
+const bookService = require('../../book//book.service');
+const booksProvider = require('../../books-provider');
+const emailService = require('../../email.service');
 
 describe('searchBook', () => {
     describe('when one book matches search text', () => {
@@ -20,6 +20,7 @@ describe('searchBook', () => {
             expect(books.length).toBe(1);
         });
 
+        // eslint-disable-next-line jest/no-identical-title
         it('should return 1 book', () => {
             const books = bookService.searchBooks('Test');
             expect(books[0].title).toBe('Test book 2009');
